@@ -17,10 +17,7 @@ const apiKey = "1f4b5b989a663bf0b64d94f3f143b1c3";
 */
 
 const baseFetch = async (endPoint) => {
-  return api
-    .get(`${endPoint}${apiKey}`)
-    .then((res) => res.data)
-    .then((err) => console.log(err));
+  return api.get(endPoint).then((res) => res.data);
 };
 
 export default {
@@ -30,56 +27,56 @@ export default {
         section: "originals",
         title: "Originais do Netflix",
         item: await baseFetch(
-          `/discover/tv?with_network=213&language=pt-BR&api_key${apiKey}`
+          `/discover/tv?with_network=213&api_key=${apiKey}&language=pt-BR`
         ),
       },
       {
         section: "trending",
         title: "Recomendado para Você",
         item: await baseFetch(
-          `/trending/all/weeek?language=pt-BR&api_key${apiKey}`
+          `/trending/all/week?&api_key=${apiKey}&language=pt-BR`
         ),
       },
       {
         section: "topRated",
         title: "Em alta",
         item: await baseFetch(
-          `/movie/top_rated?language=pt-BR&api_key${apiKey}`
+          `/movie/top_rated?&api_key=${apiKey}&language=pt-BR`
         ),
       },
       {
         section: "action",
         title: "Ação",
         item: await baseFetch(
-          `/discover/movie?with_genres=28&language=pt-BR&api_key${apiKey}`
+          `/discover/movie?with_genres=28&api_key=${apiKey}&language=pt-BR`
         ),
       },
       {
         section: "comedy",
         title: "Comédia",
         item: await baseFetch(
-          `/discover/movie?with_genres=35&language=pt-BR&api_key${apiKey}`
+          `/discover/movie?with_genres=35&language=pt-BR&api_key=${apiKey}`
         ),
       },
       {
         section: "horror",
         title: "Horror",
         item: await baseFetch(
-          `/discover/movie?with_genres=27&language=pt-BR&api_key${apiKey}`
+          `/discover/movie?with_genres=27&language=pt-BR&api_key=${apiKey}`
         ),
       },
       {
         section: "romance",
         title: "Romance",
         item: await baseFetch(
-          `/discover/movie?with_genres=10749&language=pt-BR&api_key${apiKey}`
+          `/discover/movie?with_genres=10749&language=pt-BR&api_key=${apiKey}`
         ),
       },
       {
         section: "documentary",
         title: "Documentário",
         item: await baseFetch(
-          `/discover/movie?with_genres=99&language=pt-BR&api_key${apiKey}`
+          `/discover/movie?with_genres=99&language=pt-BR&api_key=${apiKey}`
         ),
       },
     ];
