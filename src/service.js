@@ -17,7 +17,10 @@ const apiKey = "1f4b5b989a663bf0b64d94f3f143b1c3";
 */
 
 const baseFetch = async (endPoint) => {
-  return api.get(endPoint).then((res) => res.data);
+  return api
+    .get(endPoint)
+    .then((res) => res.data)
+    .catch((err) => console.log(err));
 };
 
 export default {
@@ -80,5 +83,27 @@ export default {
         ),
       },
     ];
+  },
+
+  getMovieInfo: async (movieId, type) => {
+    let info = {};
+
+    if (movieId) {
+      switch (type) {
+        case "movie":
+          info = await baseFetch(
+            `/movie/${movieId}?language=pt-BR&api_key=${apiKey}`
+          );
+          break;
+        case "tv":
+          info = await baseFetch(
+            `/tv/${movieId}?language=pt-BR&api_key=${apiKey}`
+          );
+          break;
+        default:
+          console.log("Não tem nada");
+      }
+    }
+    return info;
   },
 };
