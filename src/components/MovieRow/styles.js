@@ -7,7 +7,7 @@ export const MovieRow = styled.div`
   .right {
     position: absolute;
     width: 42px;
-    height: 225px;
+    height: 132px;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 99;
     display: flex;
@@ -47,11 +47,11 @@ export const MovieRow = styled.div`
   & .movieRow-cover {
     display: inline-block;
     cursor: pointer;
-    width: 400px;
+    width: 234px;
     & img {
       border-radius: 5px;
       width: 100%;
-      height: 225px;
+      height: 132px;
       transform: scale(0.98);
       transition: all ease 0.2s;
       &:hover {

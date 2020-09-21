@@ -19,14 +19,12 @@ export default ({title, movies}) => {
 
   const handleRightArrow = () => {
     let x = scrollX - Math.round(window.innerWidth / 2);
-    let listW = movies.results.length * 400;
+    let listW = movies.results.length * 234;
     if((window.innerWidth - listW) > x ) {
       x = (window.innerWidth - listW) - 84;
     }
     setscrollX(x);
   }
-
-
 
   return (
     <MovieRow>
@@ -40,7 +38,7 @@ export default ({title, movies}) => {
       <div className='movieRow-list-area'>
         <div className='movieRow-list' style={{
           marginLeft: scrollX,
-          width: movies.results.length * 400
+          width: movies.results.length * 234
         }}>
           {movies.results.length > 0 && movies.results.map((item, key) => (
             <div key={key} className='movieRow-cover'>
