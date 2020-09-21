@@ -15,7 +15,7 @@ export default ({feature}) => {
           </div>
           <div className='feature-buttons'>
             <PlayButton href="#">
-              <BiPlay size='30px' />
+              <BiPlay size='35px' />
               <div className='button-text'>
                 <span>Assistir</span>
               </div>

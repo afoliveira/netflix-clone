@@ -15,7 +15,8 @@ export const Feature = styled.section`
   }
 
   & .feature-name {
-    font-size: 40px;
+    font-size: 4vw;
+    font-weight: 700;
   }
 
   & .feature-description {
